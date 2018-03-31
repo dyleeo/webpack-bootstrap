@@ -18,7 +18,7 @@ module.exports = {
   devtool: 'inline-source-map', //enable webpack sourcemap
   devServer: { //setup autoreload (webpack-dev-server)
     contentBase: './dist',
-    //hot: true
+    hot: true
   },
   output: {
     filename: '[name].bundle.js',
@@ -29,6 +29,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
+          'css-hot-loader',
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
@@ -78,7 +79,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({ // define where to save the file
-      //filename: "assets/styles/main.bundle.css",
       filename: "./assets/styles/[name].bundle.css",
       chunkFilename: "[id].css"
     }),
@@ -88,7 +88,7 @@ module.exports = {
       template: "./app/index.html",
       filename: "./index.html"
     }),
-    //new webpack.NamedModulesPlugin(),
-    //new webpack.HotModuleReplacementPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
