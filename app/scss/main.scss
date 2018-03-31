@@ -1,0 +1,24 @@
+@font-face {
+   font-family: 'Montserrat';
+   src:  url('../assets/fonts/Montserrat-Regular.otf') format('opentype');
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'MontserratBold';
+   src:  url('../assets/fonts/Montserrat-ExtraBold.otf') format('opentype');
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'MontserratLight';
+   src:  url('../assets/fonts/Montserrat-ExtraLight.otf') format('opentype');
+   font-style: normal;
+}
+
+#yo {
+  border: 1px solid black;
+  background-color: red;
+  font-family: 'MontserratLight';
+  font-size: 50px;
+}
